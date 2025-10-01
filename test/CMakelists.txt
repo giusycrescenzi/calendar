@@ -1,0 +1,13 @@
+find_package(GTest REQUIRED)
+
+
+# test executable
+add_executable(runCoreTests 
+    test_core.cpp 
+    test_main.cpp
+)
+
+target_link_libraries(runCoreTests ${GTEST_BOTH_LIBRARIES} corelib)
+
+# include directories
+target_include_directories(runCoreTests PRIVATE ${GTEST_INCLUDE_DIRS} ../src/core)
